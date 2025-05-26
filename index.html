@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nigel Uniformes</title>
+    <meta name="description" content="Nigel Uniformes - Empresa familiar especializada em uniformes escolares, profissionais e sob medida. Qualidade, confiabilidade e atendimento personalizado.">
+    
+    <!--=============== BOXICONS ===============-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!--=============== FAVICON =============-->
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+
+    <!--=============== CSS =================-->
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="#home" class="nav-brand" alt="Logo">
+                <img src="/assets/img/logo_only.png" alt="Nigel Uniformes Logo" class="logo">
+                <h1 class="nav-title">N I G E L</h1>
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link">Início</a>
+                <a href="#about" class="nav-link">Sobre Nós</a>
+                <a href="#products" class="nav-link">Produtos</a>
+                <a href="#contact" class="nav-link">Contato</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#reviews" class="nav-link">Reviews</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="dark-mode-toggle" id="darkModeToggle">
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/>
+                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                    </svg>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Hero Carousel -->
+    <section id="home" class="hero-carousel">
+        <div class="carousel-container">
+            <div class="carousel-slide active">
+                <img src="/assets/img/home-photo1.png" alt="Uniformes Escolares">
+                <div class="carousel-content">
+                    <h1>Uniformes Escolares de Qualidade</h1>
+                    <p>Tradição e conforto para o dia a dia escolar</p>
+                    <button class="cta-button">Solicitar Orçamento</button>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <img src="/assets/img/home-photo2.png" alt="Uniformes Profissionais">
+                <div class="carousel-content">
+                    <h1>Uniformes Profissionais</h1>
+                    <p>Durabilidade e elegância para seu ambiente de trabalho</p>
+                    <button class="cta-button">Solicitar Orçamento</button>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <img src="/assets/img/home-photo3.png" alt="Pedidos Personalizados">
+                <div class="carousel-content">
+                    <h1>Pedidos Personalizados</h1>
+                    <p>Criamos uniformes únicos para sua empresa ou escola</p>
+                    <button class="cta-button">Solicitar Orçamento</button>
+                </div>
+            </div>
+        </div>
+        
+        <button class="carousel-btn prev" id="prevBtn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15,18 9,12 15,6"/>
+            </svg>
+        </button>
+        <button class="carousel-btn next" id="nextBtn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9,18 15,12 9,6"/>
+            </svg>
+        </button>
+        
+        <div class="carousel-indicators">
+            <button class="indicator active" data-slide="0"></button>
+            <button class="indicator" data-slide="1"></button>
+            <button class="indicator" data-slide="2"></button>
+        </div>
+
+        <div class="home-social">
+            <span class="home-social-follow">Follow Us</span>
+            <div class="home-social-links">
+                <a href="https://www.instagram.com/nigeloficial/" target="_blank" class="home-social-link">
+                    <i class="bx bxl-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/nigeloficial/" target="_blank" class="home-social-link">
+                    <i class='bx bxl-facebook'></i>
+                </a>
+                <a href="https://wa.me/your_number_here" target="_blank" class="home-social-link">
+                    <i class='bx bxl-whatsapp'></i>
+                </a>                
+            </div>
+        </div>
+       
+    </section>
+    
+    <!-- Intro Section -->
+    <section id="about" class="intro-section">
+        <div class="container">
+            <h2>Bem-vindos à Nigel Uniformes</h2>
+            <p class="intro-text">
+                Somos uma empresa familiar com tradição em qualidade e atendimento personalizado.
+                Há mais de 20 anos, oferecemos uniformes escolares e profissionais com foco na durabilidade, conforto e design.
+            </p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">Q</div>
+                    <h3>Qualidade</h3>
+                    <p>Materiais selecionados e acabamento impecável</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">C</div>
+                    <h3>Confiabilidade</h3>
+                    <p>Prazos cumpridos e atendimento especializado</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">T</div>
+                    <h3>Tradição</h3>
+                    <p>Empresa familiar com décadas de experiência</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div></div>
+                <div class="about-text">
+                    <h2>Nossa História</h2>
+                    <p>A Nigel Uniformes nasceu do sonho de uma família em oferecer uniformes de qualidade superior. Há mais de duas décadas, nossa empresa familiar tem se dedicado a criar peças que combinam conforto, durabilidade e estilo.</p>
+                    <p>Começamos como um pequeno negócio local e hoje atendemos escolas, empresas e instituições em toda a região, sempre mantendo nossos valores de qualidade e atendimento personalizado.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Anos de Experiência</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">Clientes Satisfeitos</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Empresa Familiar</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2>Nossos Produtos</h2>
+            <p class="section-subtitle">Confira nossa linha completa de uniformes</p>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="/assets/img/produto-02.png" alt="Perdidos Personalizados">
+                    <div class="product-content">
+                        <h3>Perdidos Personalizados</h3>
+                        <p>Confeccionada em tecido de alta qualidade, com stampa e bordado personalizado</p>
+                        <button class="product-info-btn" data-product="polo-escolar">
+                            <i class="bx bx-info-circle"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="/assets/img/produto-01.png" alt="Uniformes Profissionais">
+                    <div class="product-content">
+                        <h3>Uniformes Profissionais</h3>
+                        <p>Resistente e confortável, ideal para uso profissional diário</p>
+                        <button class="product-info-btn" data-product="avental">
+                           <i class="bx bx-info-circle"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="/assets/img/produto-03.png" alt="Uniformes para Eventos">
+                    <div class="product-content">
+                        <h3>Uniformes para Eventos</h3>
+                        <p>Criação exclusiva com sua marca e especificações</p>
+                        <button class="product-info-btn" data-product="personalizado">
+                            <i class="bx bx-info-circle"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2>Entre em Contato</h2>
+            <p class="section-subtitle">Estamos aqui para ajudar você</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <div>
+                            <h4>Telefone</h4>
+                            <p>(11) 99999-9999</p>
+                            <p>(11) 3333-4444</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <div>
+                            <h4>Email</h4>
+                            <p>contato@nigeluniformes.com.br</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <div>
+                            <h4>Endereço</h4>
+                            <p>Rua das Flores, 123<br>Centro - São Paulo/SP<br>CEP: 01234-567</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactName">Nome</label>
+                                <input type="text" id="contactName" name="contactName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">Email</label>
+                                <input type="email" id="contactEmail" name="contactEmail" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Assunto</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2>Perguntas Frequentes</h2>
+            <p class="section-subtitle">Tire suas dúvidas sobre nossos produtos e serviços</p>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Qual é o prazo de entrega dos uniformes?</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>O prazo de entrega varia de 7 a 15 dias úteis, dependendo da quantidade e complexidade do pedido. Para pedidos personalizados, o prazo pode ser de até 20 dias úteis.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Como faço para solicitar um orçamento?</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Você pode solicitar um orçamento através do nosso formulário online, por WhatsApp ou telefone. Informe detalhes como quantidade, tamanhos e especificações desejadas.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Vocês trabalham com bordados personalizados?</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sim! Oferecemos serviços de bordado e estampa personalizados. Podemos incluir logotipos, nomes e outros elementos conforme sua necessidade.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Qual é a política de troca e devolução?</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Aceitamos trocas em até 30 dias após a entrega, desde que os produtos estejam em perfeito estado. Para uniformes personalizados, avaliamos caso a caso.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="happy-clients">
+        <div class="container">
+            <h2>O que nossos clientes dizem</h2>
+            <p class="happy-clients-subtittle">Confira abaixo algumas avaliações de quem já confiou no nosso trabalho<br> e conheça a experiência de quem veste qualidade,<br> conforto e compromisso.</p>
+
+            <div class="client-carousel-container">
+                <div class="client-carousel-track">
+                    <div class="client-slide">
+                        <p class="happy-clients-names">Eng. Fabiano Dutra</p>
+                        <img src="/assets/img/review-user-01.png" class="review-user-img">
+                        <p class="happy-clients-star">★★★★★</p>
+                        <p class="happy-clients-review">"Always excellent service, my uniforms are made to perfection. Product quality and durability are key words for the company, in addition to punctuality in delivery and transparency."</p>                        
+                    </div>
+                    <div class="client-slide">
+                        <p class="happy-clients-names">Maria Alice Gonçalves</p>
+                        <img src="/assets/img/review-user-02.png" class="review-user-img">
+                        <p class="happy-clients-star">★★★★★</p>
+                        <p class="happy-clients-review">The shirt came in great condition, the fabric is excellent, perfect!"</p>                        
+                    </div> 
+                    <div class="client-slide">
+                        <p class="happy-clients-names">Aylla Trajano</p>
+                        <img src="/assets/img/review-user-03.png" class="review-user-img">
+                        <p class="happy-clients-star">★★★★★</p>
+                        <p class="happy-clients-review">"Beautiful clothes... wonderful and comfortable fabric. Beautiful design. I highly recommend it! Top service, nothing but praise!"</p>                        
+                    </div>
+                    <div class="client-slide">
+                        <p class="happy-clients-names">João Vitor</p>
+                        <img src="/assets/img/review-user-04.png" class="review-user-img">
+                        <p class="happy-clients-star">★★★★★</p>
+                        <p class="happy-clients-review">"High quality t-shirts! Easy to wash, no need to iron because they don't wrinkle or shed, and they don't lose their color after the first few washes. They really are very good at what they do! Our DB1 team always makes uniforms with them!"</p>                        
+                    </div>  
+                    <div class="client-slide">
+                        <p class="happy-clients-names">Jacqueline Ozelin</p>
+                        <img src="/assets/img/review-user-05.png" class="review-user-img">
+                        <p class="happy-clients-star">★★★★★</p>
+                        <p class="happy-clients-review">"Excellent quality product: print and sewing. Not to mention that they are great partners, they delivered everything on time and at a very good price!"</p>                        
+                    </div>   
+                    <div class="client-slide">
+                        <p class="happy-clients-names">Luana Tozzo Rocha</p>
+                        <img src="/assets/img/review-user-06.png" class="review-user-img">
+                        <p class="happy-clients-star">★★★★★</p>
+                        <p class="happy-clients-review">"Incredible, the service and product quality are impeccable, production is fast and meets deadlines (often delivering ahead of time). In addition to being super attentive!"</p>                        
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="/assets/img/logo_only.png" alt="Nigel Uniformes Logo" class="footer-logo">                        
+                        <h1 class="footer-tittle">N I G E L</h1>
+                    </div>
+                    <p>Empresa familiar especializada em uniformes de qualidade. Tradição, confiabilidade e atendimento personalizado há mais de 10 anos.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/nigeloficial/" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/nigeloficial/" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/5511999999999" aria-label="WhatsApp">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#about">Sobre Nós</a></li>
+                        <li><a href="#products">Produtos</a></li>                        
+                        <li><a href="#contact">Contato</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Nossos Produtos</h3>
+                    <ul>
+                        <li>Uniformes Escolares</li>
+                        <li>Uniformes Profissionais</li>
+                        <li>Camisetas Polo</li>
+                        <li>Camisetas Promocionais</li>
+                        <li>Pedidos Personalizados</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <div class="footer-contact">
+                        <p>(43) 99999-9999</p>
+                        <p>(43) 3333-4444</p>
+
+                        <a class="footer-email" href="mailto:info@nigeluniformes.com.br">
+                                info@nigeluniformes.com.br</a>                        
+                        <p>Rua das Flores, 123<br>Mandaguari - PR<br>CEP: 86975-000</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <span><a href="https://mdsantosuk.github.io/" target="_blank" class="footer__copy">&#169; 2025 Nigel Uniformes. Todos os direitos reservados.</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+    
+    <!-- EFFECT CODE -->
+    <script src="/assets/js/main.js"></script>
+        
+</body>
+</html>
