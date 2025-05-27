@@ -17,6 +17,7 @@
     --overlay-bg: rgba(0, 0, 0, 0.5);
     --form-background: #e1e1e1;
     --form-carousel: #ededed;
+    --navlink-mobile: #2c2b2b; ;
 }
 
 
@@ -34,6 +35,7 @@
     --overlay-bg: rgba(0, 0, 0, 0.7);
     --form-background: #2f2f2f;
     --form-carousel: #2c2b2b;
+    --navlink-mobile: #ededed;
 }
 
 /* Base Styles */
@@ -943,7 +945,7 @@ section h2 {
 
 .faq-question svg {
     transition: transform 0.3s ease;
-    color: var(--accent-primary);
+    color: var(--text-secondary);
 }
 
 .faq-item.active .faq-question svg {
@@ -1011,7 +1013,7 @@ section h2 {
 
 .client-carousel-track {
   display: flex;
-  animation: scrollClients 40s linear infinite;
+  animation: scrollClients 30s linear infinite;
 }
 
 .review-user-img {
@@ -1238,6 +1240,11 @@ section h2 {
         border-top: 1px solid var(--border-color);
     }
 
+    .header:not(.scrolled) .nav-link {
+        color: var(--navlink-mobile) !important;
+    }    
+
+ 
     .nav-title {
         font-size: 1.3rem; /* Slightly smaller on mobile */
     }    
@@ -1330,7 +1337,7 @@ section h2 {
 
     .client-carousel-track {
         display: flex;
-        animation: scrollClients 40s linear infinite;
+        animation: scrollClients 10s linear infinite;
     }    
 }
 
