@@ -19,8 +19,19 @@ const mobileMenuToggle = document.getElementById('mobileMenuToggle');
 const navMenu = document.getElementById('navMenu');
 
 mobileMenuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
+    const header = document.querySelector('.header');
+    const isMenuOpen = navMenu.classList.toggle('active');
     mobileMenuToggle.classList.toggle('active');
+
+    if (window.innerWidth < 768) {
+        if (isMenuOpen) {
+            header.classList.add('scrolled');
+        } else {
+            if (window.scrollY <= 50) {
+                header.classList.remove('scrolled');
+            }
+        }
+    }
 });
 
 // Close mobile menu when clicking on a link
@@ -93,7 +104,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Header scroll effect
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.header');
-    header.classList.toggle('scrolled', window.scrollY > 50);
+    const isMobileMenuOpen = navMenu.classList.contains('active');
+
+    // Only toggle scroll class if mobile menu is NOT open
+    if (!isMobileMenuOpen) {
+        header.classList.toggle('scrolled', window.scrollY > 50);
+    }
+});
+
+window.addEventListener('resize', () => {
+    const header = document.querySelector('.header');
+    if (window.innerWidth >= 768 && !navMenu.classList.contains('active')) {
+        header.classList.toggle('scrolled', window.scrollY > 50);
+    }
 });
 
 
@@ -105,9 +128,9 @@ const productInfoBtns = document.querySelectorAll('.product-info-btn');
 
 const productDetails = {
     'polo-escolar': {
-        title: 'Camiseta Polo Escolar',
+        title: 'Perdidos Personalizados',
         image: './assets/img/produto-02.png',
-        description: 'Nossa camiseta polo escolar é confeccionada com tecido de alta qualidade, oferecendo conforto e durabilidade para o uso diário. Disponível em diversas cores e tamanhos.',
+        description: 'Confeccionada em tecido de alta qualidade, com stampa e bordado personalizado.',
         features: [
             'Tecido 100% algodão ou misto',
             'Bordado personalizado incluído',
@@ -117,9 +140,9 @@ const productDetails = {
         ]
     },
     'avental': {
-        title: 'Avental Profissional',
+        title: 'Uniformes Profissionais',
         image: './assets/img/produto-01.png',
-        description: 'Avental profissional resistente e confortável, ideal para uso em cozinhas, laboratórios e ambientes profissionais diversos.',
+        description: 'Resistente e confortável, ideal para uso profissional diário.',
         features: [
             'Material resistente a manchas',
             'Bolsos práticos',
@@ -129,9 +152,9 @@ const productDetails = {
         ]
     },
     'personalizado': {
-        title: 'Uniforme Personalizado',
+        title: 'Uniformes para Eventos',
         image: './assets/img/produto-03.png',
-        description: 'Criamos uniformes únicos de acordo com suas especificações, incluindo logotipos, cores e design exclusivos para sua empresa ou escola.',
+        description: 'Criação exclusiva com sua marca e especificações.',
         features: [
             'Design exclusivo',
             'Logotipo bordado ou estampado',
@@ -164,15 +187,32 @@ productInfoBtns.forEach(btn => {
                         </li>
                     `).join('')}
                 </ul>
-                <button style="margin-top: 2rem; background: var(--accent-primary); color: white; border: none; padding: 0.75rem 2rem; border-radius: 0.5rem; cursor: pointer; font-weight: 600; transition: all 0.3s ease;" onclick="window.location.href='#contact'">
+                <button id="goToContactBtn" style="margin-top: 2rem; background: var(--accent-primary); color: rgb(72, 72, 72); border: none; padding: 0.75rem 2rem; border-radius: 0.5rem; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">
                     Solicitar Orçamento
                 </button>
             `;
+
+            setTimeout(() => {
+                const goToContactBtn = document.getElementById('goToContactBtn');
+                if (goToContactBtn) {
+                    goToContactBtn.addEventListener('click', () => {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                        document.getElementById('contact').scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    });
+                }
+            }, 50);
+
             modal.style.display = 'block';
             document.body.style.overflow = 'hidden'; 
         }
     });
 });
+
+
+
 
 closeModal.addEventListener('click', () => {
     modal.style.display = 'none';
