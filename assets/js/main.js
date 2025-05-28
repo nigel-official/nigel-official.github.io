@@ -169,14 +169,14 @@ productInfoBtns.forEach(btn => {
                 </button>
             `;
             modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden'; 
         }
     });
 });
 
 closeModal.addEventListener('click', () => {
     modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = 'auto'; // Disable this too
 });
 
 window.addEventListener('click', (e) => {
