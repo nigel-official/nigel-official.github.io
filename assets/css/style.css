@@ -1162,6 +1162,7 @@ section h2 {
     color: whitesmoke;
     margin-bottom: 1rem;
     line-height: 1.6;
+    font-size: 1rem;
 }
 
 .footer-section h3 {
@@ -1338,6 +1339,13 @@ section h2 {
         right: 1rem;
     }
 
+    .cta-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.7rem;
+        font-weight: 400;
+        border-radius: 0.3rem;
+    }    
+
     .custom-content,
     .contact-content {
         grid-template-columns: 1fr;
@@ -1415,16 +1423,14 @@ section h2 {
         font-weight: 700;
     }
 
-    .footer-section p {
-        font-size: 0.8rem;    
-    }
-
-    .footer-section h3 {
-        font-size: 1rem;
-    }
-
-    .footer-section ul li a {
-        font-size: 0.8rem;
+    .footer-contact p,
+    .footer-contact a,
+    .footer-bottom a,
+    .footer-section p,
+    .footer-section h3,
+    .footer-section ul li a,
+    .footer-section ul li { 
+        font-size: 0.9rem;
     }
 
     .client-slide {
@@ -1456,7 +1462,7 @@ section h2 {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 250px) {
     .header .container {
         padding: 0.7rem 1rem;
     }
@@ -1475,9 +1481,15 @@ section h2 {
         padding: 0.5rem;        
     }
 
-    .footer-bottom a {
-        font-size: 0.5rem;
-    }  
+    .footer-contact p,
+    .footer-contact a,
+    .footer-bottom a, 
+    .footer-section p,
+    .footer-section h3,
+    .footer-section ul li a,
+    .footer-section ul li { 
+        font-size: 0.8rem;
+    }
 
     .faq-question {
         padding: 1.2rem;
