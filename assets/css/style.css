@@ -367,31 +367,29 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.7);
     border: none;
-    color: white;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     cursor: pointer;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 10;
+    transition: all 0.3s ease;
 }
 
 .carousel-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: translateY(-50%) scale(1.1);
+    background: rgba(255, 255, 255, 0.9);
 }
 
 .carousel-btn.prev {
-    left: 2rem;
+    left: 10px;
 }
 
 .carousel-btn.next {
-    right: 2rem;
+    right: 10px;
 }
 
 .carousel-indicators {
@@ -1005,16 +1003,17 @@ section h2 {
     overflow: hidden;
     position: relative;
     max-width: 1200px;
-    margin: 1rem auto;
-    padding: 1rem;
-    border-radius: 10px;
-    background: var(--bg-primary);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 3rem auto;
+    padding: 2rem 2rem 2rem 0;
+    min-height: 350px; /* fallback, will be overridden by JS */
 }
 
 .client-carousel-track {
     display: flex;
-    animation: scrollClients 30s linear infinite;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+    align-items: center;
+    padding: 0 1rem;
 }
 
 .review-user-img {
@@ -1028,28 +1027,66 @@ section h2 {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Optional: visual polish */
 }
 
+
 .client-slide {
     position: relative;
-    font-size: .8rem;    
     flex: 0 0 100%;
     box-sizing: border-box;
     padding: 1rem;
-    margin: 10px;
-    min-height: 120px;
+    margin: 1rem;
+    min-height: 200px;
+    max-height: 320px;
     background: var(--form-carousel);
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    align-items: center;
-    justify-content: center;
     color: var(--text-primary);
+    transition: transform 0.3s ease;
+    transform: scale(0.7);
+}
+
+.center-slide {
+  transform: scale(1.5);
+  z-index: 2;
+}
+
+
+.client-slide .happy-clients-review {
+  max-height: 80px;
+  overflow: hidden;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.client-slide.center-slide .happy-clients-review {
+  max-height: 300px;
+  font-size: 0.9rem;
+  opacity: 1;
+}
+
+.client-slide:not(.center-slide)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2rem;
+  background: linear-gradient(to bottom, transparent, var(--form-carousel));
+  pointer-events: none;
 }
 
 /* Show 3 at a time on large screens */
 @media (min-width: 768px) {
-  .client-slide {
-    flex: 0 0 33.3333%;
-  }
+    .client-slide {
+        flex: 0 0 calc(33.333% - 20px); /* 3 slides with margin */
+        transform: scale(0.9);
+    }
+    
+    .client-slide.center-slide {
+        transform: scale(1.1);
+        z-index: 2;
+    }
 }
+
 
 @keyframes scrollClients {
   0% {
@@ -1059,8 +1096,6 @@ section h2 {
     transform: translateX(-100%);
   }
 }
-
-
 
 
 /* Footer */
@@ -1230,6 +1265,7 @@ section h2 {
     transform: scale(1.1);
 }
 
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-menu {
@@ -1346,11 +1382,7 @@ section h2 {
         object-fit: cover;
     }
 
-    .client-carousel-track {
-        display: flex;
-        animation: scrollClients 10s linear infinite;
-    }
-    
+   
     .footer-bottom {
         padding: 0.7rem;        
     }
@@ -1376,14 +1408,36 @@ section h2 {
         font-size: 0.8rem;
     }
 
-    .happy-clients h2 {
-        font-size: 1.8rem;
-    }    
-
-    .client-slide, p {
-        font-size: 1.2rem !important;
+    .client-slide {
+        flex: 0 0 calc(100% - 20px); /* 1 slide with margin */
+    }
+    
+    .client-slide.center-slide {
+        transform: scale(1);
     }
 
+    .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.1);
+        border: none;
+        padding: 0.5rem;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    .client-carousel-container {
+        padding: 2rem 0;
+    }
+
+    .carousel-btn.prev {
+    left: 0.5rem;
+    }
+
+    .carousel-btn.next {
+    right: 0.5rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1462,7 +1516,3 @@ section h2 {
     opacity: 1;
     transform: translateY(0);
 }
-
-
-
-

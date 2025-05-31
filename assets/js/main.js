@@ -352,32 +352,92 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Initialize page
-document.addEventListener('DOMContentLoaded', () => {
-    const header = document.querySelector('.header');
-    header.classList.toggle('scrolled', window.scrollY > 50);    
-    // Add fade in animation to page elements
-    setTimeout(() => {
-        document.querySelectorAll('section').forEach((section, index) => {
-            setTimeout(() => {
-                section.style.opacity = '1';
-                section.style.transform = 'translateY(0)';
-            }, index * 100);
-        });
-    }, 100);
+
+// === CLIENT CAROUSEL ===
+
+const clientTrack = document.querySelector(".client-carousel-track");
+const clientSlides = Array.from(clientTrack.children);
+const clientContainer = document.querySelector(".client-carousel-container");
+
+// Create and append navigation buttons
+const prevClientBtn = document.createElement("button");
+prevClientBtn.className = "carousel-btn prev";
+prevClientBtn.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15,18 9,12 15,6"/></svg>`;
+
+const nextClientBtn = document.createElement("button");
+nextClientBtn.className = "carousel-btn next";
+nextClientBtn.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,18 15,12 9,6"/></svg>`;
+
+clientContainer.appendChild(prevClientBtn);
+clientContainer.appendChild(nextClientBtn);
+
+let clientCurrentIndex = 0;
+let clientVisibleSlides = window.innerWidth >= 768 ? 3 : 1;
+
+function updateClientSlideView() {
+    const slide = clientSlides[0];
+    const slideStyle = window.getComputedStyle(slide);
+    const slideWidth = slide.offsetWidth;
+    const slideMargin = parseFloat(slideStyle.marginLeft) + parseFloat(slideStyle.marginRight);
+    const fullSlideWidth = slideWidth + slideMargin;
+
+    clientVisibleSlides = window.innerWidth >= 768 ? 3 : 1;
+    const maxIndex = Math.max(clientSlides.length - clientVisibleSlides, 0);
+    clientCurrentIndex = Math.min(clientCurrentIndex, maxIndex);
+
+    const offset = clientCurrentIndex * fullSlideWidth;
+    clientTrack.style.transition = 'transform 0.5s ease-in-out';
+    clientTrack.style.transform = `translateX(-${offset}px)`;
+
+    // Update center-slide visual effect
+    clientSlides.forEach((slide, index) => {
+        slide.classList.remove("center-slide");
+        if ((clientVisibleSlides === 3 && index === clientCurrentIndex + 1) ||
+            (clientVisibleSlides === 1 && index === clientCurrentIndex)) {
+            slide.classList.add("center-slide");
+        }
+    });
+}
+
+
+
+function nextClientSlide() {
+    const maxIndex = clientSlides.length - clientVisibleSlides;
+    clientCurrentIndex = (clientCurrentIndex + 1) > maxIndex ? 0 : clientCurrentIndex + 1;
+    updateClientSlideView();
+}
+
+function prevClientSlide() {
+    const maxIndex = clientSlides.length - clientVisibleSlides;
+    clientCurrentIndex = (clientCurrentIndex - 1) < 0 ? maxIndex : clientCurrentIndex - 1;
+    updateClientSlideView();
+}
+
+// Initial load
+window.addEventListener("load", updateClientSlideView);
+window.addEventListener("resize", updateClientSlideView);
+nextClientBtn.addEventListener("click", nextClientSlide);
+prevClientBtn.addEventListener("click", prevClientSlide);
+
+// Auto slide every 5s
+let clientInterval = setInterval(nextClientSlide, 5000);
+clientContainer.addEventListener('mouseenter', () => clearInterval(clientInterval));
+clientContainer.addEventListener('mouseleave', () => {
+    clientInterval = setInterval(nextClientSlide, 5000);
 });
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const track = document.querySelector(".client-carousel-track");
-  const slides = Array.from(track.children);
 
-  // Duplicate the slides for infinite looping
-  slides.forEach(slide => {
-    const clone = slide.cloneNode(true);
-    track.appendChild(clone);
-  });
+// Resize listener
+window.addEventListener("resize", () => {
+    // Reset to first slide on resize to avoid layout issues
+    clientCurrentIndex = 0;
+    updateClientSlideView();
 });
 
+// Initial call
+window.addEventListener('load', () => {
+  updateClientSlideView();
+});
 
 
