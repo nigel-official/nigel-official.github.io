@@ -367,7 +367,7 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.833);
     border: none;
     width: 40px;
     height: 40px;
@@ -381,17 +381,15 @@ body {
 }
 
 .carousel-btn:hover {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(194, 194, 194, 0.5);
 }
 
-.carousel-btn.prev {
+.carousel-btn.prev-home {
     left: 10px;
-    top: 130px;
 }
 
-.carousel-btn.next {
+.carousel-btn.next-home {
     right: 10px;
-    top: 130px;
 }
 
 .carousel-indicators {
@@ -835,6 +833,13 @@ section h2 {
     border-color: var(--accent-primary);
 }
 
+#captchaGroup label {
+    font-weight: 500;
+}
+#captchaInput {
+    width: 150px;
+}
+
 .submit-btn {
     background: var(--accent-primary);
     color: rgb(72, 72, 72);   
@@ -1078,6 +1083,16 @@ section h2 {
   pointer-events: none;
 }
 
+.carousel-btn.prev-review {
+    left: 10px;
+    top: 130px;
+}
+
+.carousel-btn.next-review {
+    right: 10px;
+    top: 130px;
+}
+
 /* Show 3 at a time on large screens */
 @media (min-width: 768px) {
     .client-slide {
@@ -1315,14 +1330,12 @@ section h2 {
         height: 40px;
     }
 
-    .carousel-btn.prev {
+    .carousel-btn.prev-home {
         left: 1rem;
-        top: 150px;
     }
 
-    .carousel-btn.next {
+    .carousel-btn.next-home {
         right: 1rem;
-        top: 150px;
     }
 
     .custom-content,
@@ -1423,26 +1436,23 @@ section h2 {
     }
 
     .carousel-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(0,0,0,0.1);
-        border: none;
-        padding: 0.5rem;
-        cursor: pointer;
         z-index: 10;
+        width: 35px;
+        height: 35px;
     }
 
     .client-carousel-container {
         padding: 2rem 0;
     }
 
-    .carousel-btn.prev {
-    left: 0.5rem;
+    .carousel-btn.prev-review {
+        left: 0.5rem;
+        top: 150px;
     }
 
-    .carousel-btn.next {
-    right: 0.5rem;
+    .carousel-btn.next-review {
+        right: 0.5rem;
+        top: 150px;
     }
 }
 

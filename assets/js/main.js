@@ -9,7 +9,6 @@ document.documentElement.setAttribute('data-theme', currentTheme);
 darkModeToggle.addEventListener('click', () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
 });
@@ -51,14 +50,10 @@ const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 
 function showSlide(index) {
-    // Remove active class from all slides and indicators
     slides.forEach(slide => slide.classList.remove('active'));
     indicators.forEach(indicator => indicator.classList.remove('active'));
-    
-    // Add active class to current slide and indicator
     slides[index].classList.add('active');
     indicators[index].classList.add('active');
-    
     currentSlide = index;
 }
 
@@ -92,7 +87,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         if (target) {
             const headerHeight = document.querySelector('.header').offsetHeight;
             const targetPosition = target.offsetTop - headerHeight;
-            
             window.scrollTo({
                 top: targetPosition,
                 behavior: 'smooth'
@@ -105,8 +99,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.header');
     const isMobileMenuOpen = navMenu.classList.contains('active');
-
-    // Only toggle scroll class if mobile menu is NOT open
     if (!isMobileMenuOpen) {
         header.classList.toggle('scrolled', window.scrollY > 50);
     }
@@ -118,7 +110,6 @@ window.addEventListener('resize', () => {
         header.classList.toggle('scrolled', window.scrollY > 50);
     }
 });
-
 
 // Product Modal
 const modal = document.getElementById('productModal');
@@ -170,7 +161,6 @@ productInfoBtns.forEach(btn => {
         e.stopPropagation();
         const productId = btn.getAttribute('data-product');
         const product = productDetails[productId];
-        
         if (product) {
             modalContent.innerHTML = `
                 <h2 style="margin-bottom: 1rem; color: var(--text-primary);">${product.title}</h2>
@@ -211,13 +201,12 @@ productInfoBtns.forEach(btn => {
     });
 });
 
-
-
-
-closeModal.addEventListener('click', () => {
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto'; // Disable this too
-});
+if (closeModal) {
+    closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
+}
 
 window.addEventListener('click', (e) => {
     if (e.target === modal) {
@@ -228,18 +217,13 @@ window.addEventListener('click', (e) => {
 
 // FAQ Accordion
 const faqQuestions = document.querySelectorAll('.faq-question');
-
 faqQuestions.forEach(question => {
     question.addEventListener('click', () => {
         const faqItem = question.parentElement;
         const isActive = faqItem.classList.contains('active');
-        
-        // Close all FAQ items
         document.querySelectorAll('.faq-item').forEach(item => {
             item.classList.remove('active');
         });
-        
-        // Open clicked item if it wasn't active
         if (!isActive) {
             faqItem.classList.add('active');
         }
@@ -249,6 +233,37 @@ faqQuestions.forEach(question => {
 // Form submissions
 const customOrderForm = document.getElementById('customOrderForm');
 const contactForm = document.getElementById('contactForm');
+
+// --- HONEYPOT ANTI-SPAM LOGIC ---
+const honeyInput = document.getElementById('website'); // honeypot field (hidden)
+if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+        // Honeypot anti-spam: if the hidden field is filled, it's a bot
+        if (honeyInput && honeyInput.value !== "") {
+            e.preventDefault();
+            alert('Erro: Detected as spam.');
+            return false;
+        }
+        // Your success message logic below (can be customized)
+        // Get form data
+        const formData = new FormData(contactForm);
+        const data = Object.fromEntries(formData);
+        console.log('Contact Form Data:', data);
+        showAlert('Mensagem enviada com sucesso! Responderemos em breve.');
+        contactForm.reset();
+    });
+}
+
+if (customOrderForm) {
+    customOrderForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(customOrderForm);
+        const data = Object.fromEntries(formData);
+        console.log('Custom Order Form Data:', data);
+        showAlert('Solicitação de orçamento enviada com sucesso! Entraremos em contato em breve.');
+        customOrderForm.reset();
+    });
+}
 
 function showAlert(message, type = 'success') {
     const alertDiv = document.createElement('div');
@@ -265,44 +280,10 @@ function showAlert(message, type = 'success') {
         ${type === 'success' ? 'background: #10b981;' : 'background: #ef4444;'}
     `;
     alertDiv.textContent = message;
-    
     document.body.appendChild(alertDiv);
-    
     setTimeout(() => {
         alertDiv.remove();
     }, 5000);
-}
-
-if (customOrderForm) {
-    customOrderForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(customOrderForm);
-        const data = Object.fromEntries(formData);
-        
-        // Simulate form submission
-        console.log('Custom Order Form Data:', data);
-        
-        showAlert('Solicitação de orçamento enviada com sucesso! Entraremos em contato em breve.');
-        customOrderForm.reset();
-    });
-}
-
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(contactForm);
-        const data = Object.fromEntries(formData);
-        
-        // Simulate form submission
-        console.log('Contact Form Data:', data);
-        
-        showAlert('Mensagem enviada com sucesso! Responderemos em breve.');
-        contactForm.reset();
-    });
 }
 
 // Scroll animations
@@ -310,7 +291,6 @@ const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
 };
-
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -352,20 +332,18 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-
 // === CLIENT CAROUSEL ===
-
 const clientTrack = document.querySelector(".client-carousel-track");
 const clientSlides = Array.from(clientTrack.children);
 const clientContainer = document.querySelector(".client-carousel-container");
 
 // Create and append navigation buttons
 const prevClientBtn = document.createElement("button");
-prevClientBtn.className = "carousel-btn prev";
+prevClientBtn.className = "carousel-btn prev-review";
 prevClientBtn.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15,18 9,12 15,6"/></svg>`;
 
 const nextClientBtn = document.createElement("button");
-nextClientBtn.className = "carousel-btn next";
+nextClientBtn.className = "carousel-btn next-review";
 nextClientBtn.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,18 15,12 9,6"/></svg>`;
 
 clientContainer.appendChild(prevClientBtn);
@@ -389,7 +367,6 @@ function updateClientSlideView() {
     clientTrack.style.transition = 'transform 0.5s ease-in-out';
     clientTrack.style.transform = `translateX(-${offset}px)`;
 
-    // Update center-slide visual effect
     clientSlides.forEach((slide, index) => {
         slide.classList.remove("center-slide");
         if ((clientVisibleSlides === 3 && index === clientCurrentIndex + 1) ||
@@ -398,8 +375,6 @@ function updateClientSlideView() {
         }
     });
 }
-
-
 
 function nextClientSlide() {
     const maxIndex = clientSlides.length - clientVisibleSlides;
@@ -413,7 +388,6 @@ function prevClientSlide() {
     updateClientSlideView();
 }
 
-// Initial load
 window.addEventListener("load", updateClientSlideView);
 window.addEventListener("resize", updateClientSlideView);
 nextClientBtn.addEventListener("click", nextClientSlide);
@@ -422,22 +396,8 @@ prevClientBtn.addEventListener("click", prevClientSlide);
 // Auto slide every 5s
 let clientInterval = setInterval(nextClientSlide, 5000);
 clientContainer.addEventListener('mouseenter', () => clearInterval(clientInterval));
-clientContainer.addEventListener('mouseleave', () => {
-    clientInterval = setInterval(nextClientSlide, 5000);
-});
+clientContainer.addEventListener('mouseleave', () => clientInterval = setInterval(nextClientSlide, 5000));
 
 
-
-// Resize listener
-window.addEventListener("resize", () => {
-    // Reset to first slide on resize to avoid layout issues
-    clientCurrentIndex = 0;
-    updateClientSlideView();
-});
-
-// Initial call
-window.addEventListener('load', () => {
-  updateClientSlideView();
-});
 
 

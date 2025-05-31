@@ -83,12 +83,12 @@
             </div>
         </div>
         
-        <button class="carousel-btn prev" id="prevBtn">
+        <button class="carousel-btn prev-home" id="prevBtn">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="15,18 9,12 15,6"/>
             </svg>
         </button>
-        <button class="carousel-btn next" id="nextBtn">
+        <button class="carousel-btn next-home" id="nextBtn">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="9,18 15,12 9,6"/>
             </svg>
@@ -283,6 +283,12 @@
                         <div class="form-group">
                             <label for="message">Mensagem</label>
                             <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <!-- Honeypot field: bots will fill this, real users never see it -->
+                        <div style="display:none;">
+                            <label for="website">Website</label>
+                            <input type="text" id="website" name="website" autocomplete="off">
                         </div>
                         
                         <button type="submit" class="submit-btn">Enviar Mensagem</button>
