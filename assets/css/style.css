@@ -386,10 +386,12 @@ body {
 
 .carousel-btn.prev {
     left: 10px;
+    top: 130px;
 }
 
 .carousel-btn.next {
     right: 10px;
+    top: 130px;
 }
 
 .carousel-indicators {
@@ -965,8 +967,10 @@ section h2 {
 
 /* Reviews */
 
-.happy-clients {
+
+.happy-clients  {
     background: var(--bg-secondary);
+    padding: 5rem 0 1rem 0;
 }
 
 .happy-clients h2 {
@@ -1003,8 +1007,8 @@ section h2 {
     overflow: hidden;
     position: relative;
     max-width: 1200px;
-    margin: 3rem auto;
-    padding: 2rem 2rem 2rem 0;
+    margin: 2rem auto;
+    padding: 1rem 2rem 1rem 0;
     min-height: 350px; /* fallback, will be overridden by JS */
 }
 
@@ -1313,10 +1317,12 @@ section h2 {
 
     .carousel-btn.prev {
         left: 1rem;
+        top: 150px;
     }
 
     .carousel-btn.next {
         right: 1rem;
+        top: 150px;
     }
 
     .custom-content,
