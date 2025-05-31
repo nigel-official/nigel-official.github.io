@@ -1230,7 +1230,7 @@ section h2 {
     color: var(--text-muted);
     margin: 0;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.7rem;
 }
 
 /* Modal */
@@ -1415,7 +1415,7 @@ section h2 {
     }
 
     .footer-bottom a {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
     }
 
     .footer-brand-name {
@@ -1425,7 +1425,6 @@ section h2 {
 
     .footer-contact p,
     .footer-contact a,
-    .footer-bottom a,
     .footer-section p,
     .footer-section h3,
     .footer-section ul li a,
@@ -1483,7 +1482,6 @@ section h2 {
 
     .footer-contact p,
     .footer-contact a,
-    .footer-bottom a, 
     .footer-section p,
     .footer-section h3,
     .footer-section ul li a,
