@@ -605,24 +605,49 @@ section h2 {
 }
 
 /* About Section */
-
-
 .about-section {
     background: var(--bg-secondary);
+    padding: 2rem 0;
 }
 
-.about-content {
-    display: flex;
-    align-items: center;
-    background-image: linear-gradient(to right, rgba(64, 64, 64, 0.9), rgba(66, 66, 66, 0.2)), url('/assets/img/about.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: sno-repeat;    
-    padding: 1.5rem;
+.video-background-container {
+    position: relative;
     border-radius: 1rem;
+    overflow: hidden;
     box-shadow: 0 8px 20px var(--shadow-color);
 }
 
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    min-height: 600px;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(64, 64, 64, 0.9), rgba(66, 66, 66, 0.2));
+    z-index: 1;
+}
+
+.about-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    z-index: 2;
+    min-height: 600px;
+}
+
+/* Keep all your existing text styles (unchanged) */
 .about-text h2 {
     font-size: 4rem;
     font-weight: 700;
