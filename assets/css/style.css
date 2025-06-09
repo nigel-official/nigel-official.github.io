@@ -1285,6 +1285,18 @@ section h2 {
     font-size: 0.7rem;
 }
 
+.footer-section p,
+.footer-contact p,
+.footer-section a,
+.footer-section ul li,
+.footer-section ul li a {
+    font-size: 0.6rem !important;
+}
+
+.footer-tittle h3{
+    font-size: 0.8rem !important;
+}
+
 /* Modal */
 .modal {
     display: none;
@@ -1349,11 +1361,11 @@ section h2 {
     .footer-section a,
     .footer-section ul li,
     .footer-section ul li a {
-        font-size: 0.9rem !important;
+        font-size: 0.6rem !important;
     }
 
     .footer-tittle h3{
-        font-size: 1.1rem !important;
+        font-size: 0.8rem !important;
     }
 
 }
@@ -1502,12 +1514,12 @@ section h2 {
     .footer-section a,
     .footer-section ul li,
     .footer-section ul li a {
-        font-size: 0.7rem !important;
+        font-size: 0.5rem !important;
     }
 
     .footer-tittle h3{
-        font-size: 0.95rem !important;
-    }    
+        font-size: 0.7rem !important;
+    }   
 
 
     .client-slide {
@@ -1569,11 +1581,11 @@ section h2 {
     .footer-section a,
     .footer-section ul li,
     .footer-section ul li a {
-        font-size: 0.6rem !important;
+        font-size: 0.5rem !important;
     }
 
     .footer-tittle h3{
-        font-size: 0.8rem !important;
+        font-size: 0.7rem !important;
     }
 
 }
