@@ -1216,11 +1216,9 @@ section h2 {
     color: whitesmoke;
     margin-bottom: 1rem;
     line-height: 1.6;
-    font-size: 1rem;
 }
 
 .footer-section h3 {
-    font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 1rem;
     color: whitesmoke;
@@ -1348,14 +1346,16 @@ section h2 {
 @media (max-width: 1200px) {
     .footer-section p,
     .footer-contact p,
+    .footer-section a,
     .footer-section ul li,
     .footer-section ul li a {
-        font-size: 0.95rem;
+        font-size: 0.9rem !important;
     }
-    .footer-tittle,
-    .footer-brand-name {
-        font-size: 1.2rem;
+
+    .footer-tittle h3{
+        font-size: 1.1rem !important;
     }
+
 }
 
 @media (max-width: 1000px) {
@@ -1497,19 +1497,18 @@ section h2 {
         font-size: 0.6rem;
     }
 
-    .footer-brand-name {
-        font-size: 1.2rem;
-        font-weight: 700;
+    .footer-section p,
+    .footer-contact p,
+    .footer-section a,
+    .footer-section ul li,
+    .footer-section ul li a {
+        font-size: 0.7rem !important;
     }
 
-    .footer-contact p,
-    .footer-contact a,
-    .footer-section p,
-    .footer-section h3,
-    .footer-section ul li a,
-    .footer-section ul li { 
-        font-size: 0.8rem;
-    }
+    .footer-tittle h3{
+        font-size: 0.95rem !important;
+    }    
+
 
     .client-slide {
         flex: 0 0 calc(100% - 20px); /* 1 slide with margin */
@@ -1567,14 +1566,14 @@ section h2 {
 
     .footer-section p,
     .footer-contact p,
+    .footer-section a,
     .footer-section ul li,
     .footer-section ul li a {
-        font-size: 0.7rem;
+        font-size: 0.6rem !important;
     }
 
-    .footer-tittle,
-    .footer-brand-name {
-        font-size: 0.8rem;
+    .footer-tittle h3{
+        font-size: 0.8rem !important;
     }
 
 }
@@ -1598,13 +1597,16 @@ section h2 {
         padding: 0.5rem;        
     }
 
-    .footer-contact p,
-    .footer-contact a,
     .footer-section p,
-    .footer-section h3,
-    .footer-section ul li a,
-    .footer-section ul li { 
-        font-size: 0.6rem;
+    .footer-contact p,
+    .footer-section a,
+    .footer-section ul li,
+    .footer-section ul li a {
+        font-size: 0.5rem !important;
+    }
+
+    .footer-tittle h3{
+        font-size: 0.7rem !important;
     }
 
     .faq-question {
