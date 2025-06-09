@@ -634,21 +634,23 @@ section h2 {
     z-index: 0;
     min-height: 600px;
     overflow: hidden;
-    background: #222; /* fallback color */
+    background: #111;
 }
+
 .video-background-crop iframe {
     position: absolute;
-    top: 50%; left: 50%;
-    min-width: 120vw;
-    min-height: 70vw;
-    width: 120vw; /* "Zoom" wider than container */
+    top: 50%;
+    left: 50%;
+    width: 120vw;     /* Start zoomed in for desktops */
     height: 70vw;
+    min-width: 100vw;
+    min-height: 100vh;
     max-width: none;
     max-height: none;
     transform: translate(-50%, -50%);
-    pointer-events: none; /* background only */
     border: none;
-    aspect-ratio: 16/9;
+    pointer-events: none;
+    aspect-ratio: 16/9; /* just helps some browsers; not required */
 }
 
 .video-overlay {
@@ -1341,6 +1343,14 @@ section h2 {
 /* Responsive Design */
 
 
+/* Tablet: Zoom in more so no bars ever show */
+@media (max-width: 1000px) {
+    .video-background-crop iframe {
+        width: 180vw;
+        height: 101vw;
+    }
+}
+
 
 @media (max-width: 768px) {
     .nav-menu {
@@ -1516,10 +1526,27 @@ section h2 {
     }
 
     .video-background-crop iframe {
-        min-width: 180vw;
-        min-height: 101vw;
-        width: 180vw;
-        height: 101vw;
+        width: 200vw;
+        height: 112vw;
+        min-width: 100vw;
+        min-height: 100vh;
+    }
+
+}
+
+/* Mobile: Maximum zoom (smallest phones) */
+@media (max-width: 600px) {
+    .video-background-crop iframe {
+        width: 250vw;
+        height: 140vw;
+    }
+}
+
+/* Ultra-small: Make sure it still covers for <400px screens */
+@media (max-width: 450px) {
+    .video-background-crop iframe {
+        width: 600vw;
+        height: 350vw;
     }
 }
 
