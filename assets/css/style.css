@@ -1344,6 +1344,20 @@ section h2 {
 
 
 /* Tablet: Zoom in more so no bars ever show */
+
+@media (max-width: 1200px) {
+    .footer-section p,
+    .footer-contact p,
+    .footer-section ul li,
+    .footer-section ul li a {
+        font-size: 0.95rem;
+    }
+    .footer-tittle,
+    .footer-brand-name {
+        font-size: 1.2rem;
+    }
+}
+
 @media (max-width: 1000px) {
     .video-background-crop iframe {
         width: 180vw;
@@ -1542,12 +1556,27 @@ section h2 {
     }
 }
 
+
+
 /* Ultra-small: Make sure it still covers for <400px screens */
 @media (max-width: 450px) {
     .video-background-crop iframe {
         width: 600vw;
         height: 350vw;
     }
+
+    .footer-section p,
+    .footer-contact p,
+    .footer-section ul li,
+    .footer-section ul li a {
+        font-size: 0.85rem;
+    }
+
+    .footer-tittle,
+    .footer-brand-name {
+        font-size: 0.95rem;
+    }
+
 }
 
 @media (max-width: 250px) {
