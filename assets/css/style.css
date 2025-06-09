@@ -1508,7 +1508,7 @@ section h2 {
     .footer-section h3,
     .footer-section ul li a,
     .footer-section ul li { 
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     .client-slide {
@@ -1569,12 +1569,12 @@ section h2 {
     .footer-contact p,
     .footer-section ul li,
     .footer-section ul li a {
-        font-size: 0.85rem;
+        font-size: 0.7rem;
     }
 
     .footer-tittle,
     .footer-brand-name {
-        font-size: 0.95rem;
+        font-size: 0.8rem;
     }
 
 }
@@ -1604,7 +1604,7 @@ section h2 {
     .footer-section h3,
     .footer-section ul li a,
     .footer-section ul li { 
-        font-size: 0.8rem;
+        font-size: 0.6rem;
     }
 
     .faq-question {
